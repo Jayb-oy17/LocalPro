@@ -1919,6 +1919,12 @@ textarea[aria-invalid="true"]:focus {
 
    }
 
+   .is-open.main-nav{
+      position: fixed;
+      top: 5rem;
+      right: 5rem;
+   }
+
    /* Phase 11: Ensure minimum 44x44px touch targets on mobile */
    * .btn,
 
@@ -2889,6 +2895,10 @@ textarea[aria-invalid="true"]:focus {
 @media (max-width: 767px) {
    .container {
       width: min(100% - 1.25rem, 1280px);
+   }
+
+   .main-nav{
+      display: none;
    }
 
    .site-header {
