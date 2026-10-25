@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Provider Details — LocalPro</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="logo" aria-label="LocalPro Home"
+          >LocalPro</a
+        >
+        <button
+          id="mobile-menu-toggle"
+          class="mobile-menu-btn"
+          aria-expanded="false"
+          aria-controls="main-nav-list"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="hamburger-icon" aria-hidden="true"></span>
+        </button>
+        <nav aria-label="Main Navigation" class="main-nav">
+          <ul class="nav-list" id="main-nav-list">
+            <li><a href="directory.html">Find Services</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="container provider-detail-layout">
+      <section class="provider-header" aria-labelledby="provider-name">
+        <h1 id="provider-name">Loading...</h1>
+        <p id="provider-meta" class="provider-meta">
+          Loading provider details...
+        </p>
+        <button
+          class="btn btn-outline"
+          id="btn-save-favorite"
+          aria-pressed="false"
+        >
+          Save to Favorites
+        </button>
+      </section>
+
+      <div id="provider-detail-content" class="detail-content">
+        <section class="provider-info">
+          <h2 id="about-heading">About</h2>
+          <p id="provider-about">Loading description...</p>
+
+          <h3 id="services-heading">Services & Pricing</h3>
+          <ul
+            id="services-list"
+            class="service-list"
+            aria-labelledby="services-heading"
+          >
+            <li>Loading services...</li>
+          </ul>
+
+          <h3 id="areas-heading">Service Areas</h3>
+          <div
+            id="service-areas"
+            class="service-areas-list"
+            aria-labelledby="areas-heading"
+          ></div>
+
+          <h3 id="availability-heading">Availability & Contact</h3>
+          <div
+            id="availability-contact"
+            class="availability-contact-grid"
+            aria-labelledby="availability-heading"
+          ></div>
+
+          <h3 id="portfolio-heading">Portfolio</h3>
+          <div
+            id="portfolio-grid"
+            class="portfolio-grid"
+            aria-labelledby="portfolio-heading"
+          ></div>
+
+          <h3 id="reviews-heading">Reviews</h3>
+          <div
+            id="reviews-list"
+            class="review-list"
+            aria-labelledby="reviews-heading"
+          ></div>
+        </section>
+
+        <aside
+          id="provider-sidebar-content"
+          class="provider-sidebar"
+          aria-labelledby="quote-heading"
+        >
+          <div class="card">
+            <h2 id="quote-heading">Request a Quote</h2>
+            <form id="quote-form" action="#" method="POST" novalidate>
+              <div
+                id="quote-feedback"
+                class="form-feedback"
+                role="alert"
+                aria-live="polite"
+                tabindex="-1"
+              ></div>
+
+              <div class="form-group">
+                <label for="quote-service">Service Needed</label>
+                <select
+                  id="quote-service"
+                  name="service"
+                  required
+                  aria-describedby="error-quote-service"
+                >
+                  <option value="">Loading services...</option>
+                </select>
+                <span class="field-error" id="error-quote-service"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="quote-description">Job Description</label>
+                <textarea
+                  id="quote-description"
+                  name="description"
+                  rows="4"
+                  required
+                  placeholder="Describe the issue or job..."
+                  aria-describedby="error-quote-description"
+                ></textarea>
+                <span class="field-error" id="error-quote-description"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="quote-location">Your Location</label>
+                <input
+                  type="text"
+                  id="quote-location"
+                  name="location"
+                  required
+                  placeholder="e.g., Lekki Phase 1"
+                  aria-describedby="error-quote-location"
+                />
+                <span class="field-error" id="error-quote-location"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="quote-date">Preferred Date</label>
+                <input
+                  type="date"
+                  id="quote-date"
+                  name="preferred_date"
+                  required
+                  aria-describedby="error-quote-date"
+                />
+                <span class="field-error" id="error-quote-date"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="quote-budget">Estimated Budget (NGN)</label>
+                <input
+                  type="number"
+                  id="quote-budget"
+                  name="budget"
+                  min="0"
+                  placeholder="e.g., 10000"
+                  aria-describedby="error-quote-budget"
+                />
+                <span class="field-error" id="error-quote-budget"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                Submit Request
+              </button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 LocalPro. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/data.js" defer></script>
+    <script src="js/store.js" defer></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>

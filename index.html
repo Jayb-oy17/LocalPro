@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LocalPro — Find Trusted Local Services in Nigeria</title>
+    <meta
+      name="description"
+      content="Connect with verified plumbers, electricians, cleaners, and more in your area."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="logo" aria-label="LocalPro Home"
+          >LocalPro</a
+        >
+        <button
+          id="mobile-menu-toggle"
+          class="mobile-menu-btn"
+          aria-expanded="false"
+          aria-controls="main-nav-list"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="hamburger-icon" aria-hidden="true"></span>
+        </button>
+        <nav aria-label="Main Navigation" class="main-nav">
+          <ul class="nav-list" id="main-nav-list">
+            <li><a href="directory.html">Find Services</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#" class="btn btn-outline">Sign In</a></li>
+            <li><a href="#" class="btn btn-primary">Join as Provider</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="container">
+          <h1 id="hero-heading">Find Trusted Local Professionals</h1>
+          <p>
+            Connect with verified plumbers, electricians, cleaners, and tutors
+            in Lagos, Abuja, and beyond.
+          </p>
+          <form
+            class="search-form"
+            action="directory.html"
+            method="GET"
+            aria-label="Search providers"
+          >
+            <label for="search-service" class="visually-hidden"
+              >Service needed</label
+            >
+            <input
+              type="text"
+              id="search-service"
+              name="service"
+              placeholder="Service needed (e.g., Plumber)"
+              required
+            />
+            <label for="search-location" class="visually-hidden"
+              >Location</label
+            >
+            <input
+              type="text"
+              id="search-location"
+              name="location"
+              placeholder="Location (e.g., Lekki, Lagos)"
+              required
+            />
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="how-it-works" aria-labelledby="how-heading">
+        <div class="container">
+          <h2 id="how-heading">How LocalPro Works</h2>
+          <div class="steps-grid">
+            <div class="step-card">
+              <div class="step-icon">1</div>
+              <h3>Search & Compare</h3>
+              <p>
+                Browse verified professionals in your area. Compare ratings,
+                reviews, and pricing to find the perfect fit.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-icon">2</div>
+              <h3>Request a Quote</h3>
+              <p>
+                Describe your job and send a request directly to the provider.
+                No hidden fees or obligations.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-icon">3</div>
+              <h3>Get it Done</h3>
+              <p>
+                Hire with confidence. Track your request status and leave a
+                review once the job is complete.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="categories" aria-labelledby="categories-heading">
+        <div class="container">
+          <h2 id="categories-heading">Popular Categories</h2>
+          <ul class="category-grid">
+            <li><a href="directory.html?category=plumbing">Plumbing</a></li>
+            <li><a href="directory.html?category=electrical">Electrical</a></li>
+            <li><a href="directory.html?category=cleaning">Cleaning</a></li>
+            <li><a href="directory.html?category=tutoring">Tutoring</a></li>
+            <li>
+              <a href="directory.html?category=moving">Moving & Hauling</a>
+            </li>
+            <li><a href="directory.html?category=painting">Painting</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="featured-providers" aria-labelledby="featured-heading">
+        <div class="container">
+          <h2 id="featured-heading">Featured Professionals</h2>
+          <div id="featured-providers-list" class="provider-grid">
+            <p class="loading-text">Loading featured providers...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 LocalPro. All rights reserved.</p>
+        <nav aria-label="Footer Navigation">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact & Support</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="js/data.js" defer></script>
+    <script src="js/store.js" defer></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>

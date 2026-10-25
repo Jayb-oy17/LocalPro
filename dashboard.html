@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — LocalPro</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="logo" aria-label="LocalPro Home"
+          >LocalPro</a
+        >
+        <button
+          id="mobile-menu-toggle"
+          class="mobile-menu-btn"
+          aria-expanded="false"
+          aria-controls="main-nav-list"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="hamburger-icon" aria-hidden="true"></span>
+        </button>
+        <nav aria-label="Main Navigation" class="main-nav">
+          <ul class="nav-list" id="main-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Find Services</a></li>
+            <li><a href="#" class="btn btn-outline">Sign Out</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="container dashboard-layout">
+      <aside class="dashboard-nav" aria-label="Dashboard Navigation">
+        <div class="user-profile-summary">
+          <p>Welcome, <strong id="user-name">Ada</strong></p>
+          <small
+            >Current View:
+            <span id="current-role" class="role-badge">Customer</span></small
+          >
+          <button
+            type="button"
+            id="toggle-role"
+            class="btn-text btn-block"
+            style="margin-top: var(--space-sm); text-align: center"
+          >
+            Switch to Provider View (Simulated)
+          </button>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#overview" class="active">Overview</a></li>
+            <li><a href="#requests">Requests</a></li>
+            <li class="customer-only">
+              <a href="#favorites">Saved Providers</a>
+            </li>
+            <li class="provider-only" hidden>
+              <a href="#profile-editor">Edit Profile</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <section class="dashboard-content" aria-labelledby="dashboard-heading">
+        <div id="customer-view" class="role-view">
+          <h1 id="dashboard-heading">Customer Dashboard</h1>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h3>Active Requests</h3>
+              <p class="stat-value" id="stat-active-requests">0</p>
+            </div>
+            <div class="stat-card">
+              <h3>Saved Providers</h3>
+              <p class="stat-value" id="stat-saved-count">0</p>
+            </div>
+          </div>
+
+          <section
+            aria-labelledby="my-requests-heading"
+            class="dashboard-section"
+          >
+            <h2 id="my-requests-heading">My Requests</h2>
+            <div class="table-responsive">
+              <table class="data-table" id="customer-requests-table">
+                <caption class="visually-hidden">
+                  List of your service requests
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Provider</th>
+                    <th scope="col">Service</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section
+            aria-labelledby="saved-providers-heading"
+            class="dashboard-section"
+          >
+            <h2 id="saved-providers-heading">Saved Providers</h2>
+            <div id="saved-providers-list" class="provider-grid"></div>
+          </section>
+        </div>
+
+        <div id="provider-view" class="role-view" hidden>
+          <h1 id="provider-dashboard-heading">Provider Dashboard</h1>
+          <p class="text-muted" style="margin-bottom: var(--space-lg)">
+            <em
+              >Note: You are viewing the dashboard for "Tunde's Electrical
+              Solutions" (ID: 1). This is a simulation.</em
+            >
+          </p>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h3>New Inquiries</h3>
+              <p class="stat-value" id="stat-new-inquiries">0</p>
+            </div>
+            <div class="stat-card">
+              <h3>Accepted Jobs</h3>
+              <p class="stat-value" id="stat-accepted-jobs">0</p>
+            </div>
+          </div>
+
+          <section
+            aria-labelledby="incoming-requests-heading"
+            class="dashboard-section"
+          >
+            <h2 id="incoming-requests-heading">Incoming Inquiries</h2>
+            <div class="table-responsive">
+              <table class="data-table" id="provider-inquiries-table">
+                <caption class="visually-hidden">
+                  List of incoming service requests
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Service</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section
+            aria-labelledby="profile-editor-heading"
+            class="dashboard-section"
+          >
+            <h2 id="profile-editor-heading">Business Profile Editor</h2>
+            <div class="card">
+              <form id="profile-edit-form">
+                <div class="form-group">
+                  <label for="edit-business-name">Business Name</label>
+                  <input
+                    type="text"
+                    id="edit-business-name"
+                    name="businessName"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="edit-description">Description</label>
+                  <textarea
+                    id="edit-description"
+                    name="description"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="edit-phone">Contact Phone</label>
+                  <input type="tel" id="edit-phone" name="phone" />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Save Changes
+                </button>
+                <span
+                  id="profile-save-feedback"
+                  class="form-feedback"
+                  role="status"
+                  aria-live="polite"
+                  style="
+                    margin-left: var(--space-md);
+                    display: inline-block;
+                    vertical-align: middle;
+                  "
+                ></span>
+              </form>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 LocalPro. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/data.js" defer></script>
+    <script src="js/store.js" defer></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
